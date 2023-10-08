@@ -7,8 +7,6 @@ RUN cargo build -r
 
 FROM debian:bookworm
 
-EXPOSE 3000
-
 # RUN apt install libc
 COPY --from=builder /usr/src/app/target/release/docker-test /usr/local/bin/docker-test
 CMD ["docker-test"]
